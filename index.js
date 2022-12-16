@@ -1,1 +1,1 @@
-console.log("Hello from index.js!");
+// This was my initial code to test connectivity of the index.js file, by printing a message that I could see using the Chrome dev tools, inspect feature console.log("Hello from index.js!"); In this file I will attempt to write the code that will make this game an actual game, with the use of JavaScript functionality.

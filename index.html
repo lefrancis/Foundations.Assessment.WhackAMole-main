@@ -1,15 +1,34 @@
+<!-- For this project DOM manipultipon of the document tree was introduced. Line (2) the doctype repersents the root of said tree. The tree consists of three types of nodes, the document at number (1),the elements consiting of html, head, body, title, divs, & paragraphs at number(2), then at number are text nodes that are found in the title and paragraphs.  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The code on line (9) links the main.css file used for styling this game. -->
   <link rel="stylesheet" href="main.css">
   <title>Whack-A-Mole Assessment</title>
 </head>
 <body>
   <h1>Whack-A-Mole</h1>
-
+  <h2>Your Score:</h2>
+  <h2 id="score">0</h2>
+  <h2>Remaining Time:</h2>
+  <h2 id="remainingTime">45 sec</h2>
+<!-- The code on line (19) is the parent div to the nine holes & moles child-divs -->
+  <div id="game-container">
+<!-- The code on lines (19-28) hold the nine divs necessary to hold the holes and moles. I classified the holes by ids and wil classify the moles by classes (1-9)  -->
+    <div id="hole" class="1"></div>
+    <div id="hole" class="2"></div>
+    <div id="hole" class="3"></div>
+    <div id="hole" class="4"></div>
+    <div id="hole" class="5"></div>
+    <div id="hole" class="6"></div>
+    <div id="hole" class="7"></div>
+    <div id="hole" class="8"></div>
+    <div id="hole" class="9"></div>
+  </div>
+<!-- The code on line (30) links the JavaScript script tag, this links the index.js file which contains the Javascript functionality, it is placed at the very bottom of the DOM tree because said tree is read from top to bottom, by the web browser, this allows the JavaScript to load last which in turn prevents any loading errors.  -->
 <script src="index.js"></script>  
 </body>
 </html>
