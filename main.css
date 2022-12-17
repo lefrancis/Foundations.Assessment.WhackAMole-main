@@ -1,65 +1,50 @@
 *{
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
-/* The code below in line (6) is where I set my rows and colums where my holes and moles will render. Using display flex and the flex direction properties ensures that the holes and moles are displayed in rows of (3) stacked on (3) columns. I used justify-content & align-items center to bring holes and moles to the center of page. */
-body{
-  height: 100%;
-  background-color: #8fbc8f;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
+
+body {
+	background-color: #deb887;
 }
 
 h1 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 40px;
-  text-align: center;
-  text-decoration: underline;
-  color: #00f;
-  margin-top: 16px;
-  margin-bottom: 18px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #00f;
+	font-size: 30px;
+	text-decoration: underline;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.score {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 25px;
+	margin-bottom: 12px;
+	color: #006400;
 }
 
-h2 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 30px;
-  text-align: center; 
-  text-decoration: underline;
-  margin-bottom: 12px;
-  color: #00f;
-  
+.timer {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 25px;
+	margin-bottom: 12px;
+	color: #ff4500;
 }
 
-#remainingTime {
-  text-decoration: none;
-  color: #ff0000;
-  font-size: 35px;
-}
-
-#score {
-  text-decoration: none;
-  color: #006400;
-  font-size: 35px;
-}
-/* The code below in line (48) is my game-container parent div. I used disply-grid to show it in grid format. the figures I used for width & height where calculated as each hole and mole will have a height & width of (210 * 3) each. I used grid-template as part of css display grid, with repeat since I needed the code repeated for my nine  divs, (1fr) repersents a fraction of the available space of said grid. */
 #game-container {
-  display: grid;
-  width: 630px;
-  height: 630px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 80px;
-  
+	position: absolute;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	background-color: #8fbc8f;
 }
 
-#hole {
-  
-  background-color: #00f;
+.hole {
+	width: 250px;
+	height: 250px;
+	border: 1px solid #000;
 }
 
-/* .mole {
-  background-color: crimson;
-} */
+.mole {
+	background: url(./images/mole.png) bottom center no-repeat;
+}
+
+
+
