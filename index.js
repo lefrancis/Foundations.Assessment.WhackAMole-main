@@ -10,36 +10,34 @@ let time = 45;
 let hitPosition;
 let result = 0;
 
+// The code on lines (13-29) has been commented out, because as per Luke's instructions we were NOT to use the forEach method as it had not been covered in class. I started to attempt to use it because I wanted to see the finshed product. Unfortunately, I could not see the porject to the end with an alternative loop to the forEach method. 12/18... Code has been uncommented, after this project was graded by Luke Jones, and in his comments, Luke suggested that I "should have submitted uncommented code." <paraphase>
 
-// The code on lines (13-29) have been commented out, because as per Luke's instructions we were NOT to use the forEach method as it had not been covered in class. I started to attempt to use it because I wanted to see the finshed product. Unfortunately, I could not see the porject to the end with an alternative loop to the forEach method. 
+function randomBox() {
+	holes.forEach((square) => square.classList.remove("mole"));
 
+	let randomPosition = holes[Math.floor(Math.random() * 9)];
+	randomPosition.classList.add("mole");
+	hitPosition = randomPosition.id;
+}
+let interval = setInterval(randomBox, 700);
 
-// function randomBox () {
-//   holes.forEach(square => square.classList.remove("mole"))
+holes.forEach((square) =>
+	square.addEventListener("mousedown", function () {
+		if (square.id === hitPosition) {
+			result++;
+			score.textContent = result;
+		}
+	})
+);
 
-//    let randomPosition = holes[Math.floor(Math.random() * 9)]
-//    randomPosition.classList.add("mole") 
-//    hitPosition = randomPosition.id 
+function timeLeft() {
+	timer--;
+	time.textContent = timer;
+	if (timer === 0) {
+		prompt("Your game is over!");
+		clearInterval(interval);
+		clearInterval(timeLeft);
+	}
+}
 
-
-// }
-// let interval = setInterval(randomBox, 700);
-
-// holes.forEach(square => square.addEventListener("mousedown", function() {
-//   if (square.id === hitPosition) {
-//     result++;
-//     score.textContent = result;
-//   }
-// }))
-
-// function timeLeft () {
-//   timer--;
-//   time.textContent = timer
-//   if (timer === 0 ) {
-//     prompt("Your game is over!");
-//     clearInterval(interval)
-//     clearInterval(timeLeft)
-//   }
-// }
-
-// setInterval(timeLeft, 1000);
+setInterval(timeLeft, 1000);
